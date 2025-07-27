@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Document Object model</h1>
+    <p class="info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, ut?</p>
+    <div class="main">
+         <span>Welcome to dom</span>
+    </div>
+    <button onclick="changetext()">Click</button>
+   <script>
+    
+    function changetext(){
+        var ele=document.getElementById("heading");
+   // ele.textContent="Hello DOM"
+    //ele.innerHTML="Hello DOM"
+     ele.innerText="Hello DOM"
+    ele.style.backgroundColor="green"
+    ele.style.color="white"
+    }
+   </script>
+
+</body>
+</html>
