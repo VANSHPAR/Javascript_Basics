@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading">Document Object model</h1>
+    <p class="info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, ut?</p>
+    <h2 class="info">Random text</h2>
+    <b class="info">Bold text</b>
+    <div id="main">
+        <span>Welcome to dom</span>
+        <h1>Visual Studio</h1>
+    </div>
+    <button onclick="changetext()">Click</button>
+    <h1>black text</h1>
+    <form action="">
+        <input type="text" name="para">
+        <input type="email" name="para">
+    </form>
+    <script>
+        
+        var ele=document.getElementsByName("para")
+        function changetext(){
+            ele[0].placeholder="Enter username"
+            ele[1].style.backgroundColor="violet"
+        }
+        // var ele=document.getElementsByTagName("h1")
+        // function changetext(){
+        //     console.log(ele);
+        //     for(let i=0;i<ele.length;i++){
+        //         ele[i].style.border="solid black 4px"
+        //     }
+        // }
+       // var ele = document.getElementsByClassName("info");
+        // function changetext(){
+        //    var ele=document.getElementById("main");
+        // ele.textContent="Hello DOM"
+        //ele.innerHTML="Hello DOM"
+        //  ele.innerText="Hello DOM"
+        // ele.style.backgroundColor="green"
+        // ele.style.color="white"
+
+        //  var ele=document.getElementById("main");
+        //  console.log(ele.textContent);
+        //   console.log(ele.innerText);
+        //  console.log(ele.innerHTML)
+        // }
+        // function changetext() {
+        //     ele[0].style.backgroundColor = "red";
+        //     ele[1].style.backgroundColor = "yellow";
+        //     ele[2].style.backgroundColor = "green";
+        //     console.log(ele);
+        // }
+    </script>
+
+</body>
+
+</html>

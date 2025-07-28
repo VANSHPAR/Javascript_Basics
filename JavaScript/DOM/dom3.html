@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+         .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .violet{
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="red" id="heading" title="hello">Document Object Model</h1>
+    <button onclick="green()">Green</button>
+    <button onclick="blue()">Blue</button>
+    <button onclick="yellow()">Yellow</button>
+    <button onclick="orange()">Orange</button>
+    <button onclick="violet()">Toggle</button>
+
+
+    <script>
+        var ele=document.getElementById("heading")
+        function green(){
+          
+        ele.classList.remove("red")
+         ele.classList.add("green")
+        }
+        function blue(){
+        // console.log(ele.getAttribute("id")); 
+       // ele.setAttribute("title","Blue title")
+       ele.setAttribute("style","background-color:blue")
+       console.log(ele.getAttribute("style"))
+       ele.removeAttribute("title")
+        }
+        function yellow(){
+          
+        ele.classList.remove("red")
+         ele.classList.add("yellow")
+        }
+        function orange(){
+          
+        ele.classList.remove("red")
+         ele.classList.add("orange")
+        }
+        function violet(){
+           ele.classList.toggle("violet") 
+        }
+
+
+    </script>
+</body>
+</html>
