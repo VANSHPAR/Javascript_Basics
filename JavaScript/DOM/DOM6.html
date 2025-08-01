@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #container{
+            border: 2px solid black;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+   <div id="container">
+    <h1>Hello World</h1>
+    <h2 id="heading">Content</h2>
+   </div>
+   <div id="old">
+    <h1 id="main">YouTube</h1>
+   </div>
+   <button onclick="func()">Add Element</button>
+   <button onclick="funcc()">Replace Element</button>
+   <script>
+    const container=document.getElementById("container");
+    const heading=document.getElementById("heading");
+
+
+    const old=document.getElementById("old");
+    const h1=document.getElementById("main");
+    const mark=document.createElement("mark");
+    mark.textContent="REPLACED";
+
+
+    function func(){
+        const h2=document.createElement("h2")
+        h2.textContent="Vansh parmar";
+        h2.style.backgroundColor="red";
+        h2.style.color="white"
+       // container.appendChild(h2);
+       //container.append("Welcome!",h2);
+      // container.prepend(h2);
+      container.insertBefore(h2,heading)
+      
+    }
+    function funcc(){
+      // old.replaceChild(mark,h1);
+      h1.replaceWith(mark);
+    }
+   </script>
+     
+
+</body>
+
+</html>

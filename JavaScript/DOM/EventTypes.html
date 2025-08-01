@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Mouse Events</h1>
+    <!-- <button onclick="func(event)">Click</button> -->
+    <!-- <button onmousedown="func(event)">Click</button> -->
+    <!-- <button onmousemove="func(event)">Click</button> -->
+    <!-- <button onmouseleave="func(event)">Click</button> -->
+    <!-- <button onmouseup="func(event)">Click</button> -->
+    <!-- <input type="text" onkeydown="func(event)">   -->
+    <!-- <input type="text" onkeyup="func(event)">  -->
+    <input type="text" onfocus="funcc1(event)" onblur="funcc2(event)" onchange="funcc3(event)">
+    <script>
+        function func(event) {
+            // console.log(event.key);
+            console.log(event.type)
+        }
+        function funcc1(event) {
+            event.target.style.backgroundColor = "aqua"
+        }
+        function funcc2(event) {
+            event.target.style.backgroundColor = "yellow"
+        }
+        function funcc3(event) {
+            console.log("Value changed")
+        }
+    </script>
+</body>
+
+</html>
