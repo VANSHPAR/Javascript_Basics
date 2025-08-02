@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #gparent{
+            background-color: aquamarine;
+            width: 300px;
+            height: 300px;
+        }
+        #parent{
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+        }
+        #child{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="gparent">
+        <div id="parent">
+            <div id="child" onclick="event.stopPropagation()">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var gparent=document.getElementById("gparent");
+        var parent=document.getElementById("parent");
+        var child=document.getElementById("child");
+        gparent.addEventListener("click",()=>{
+            console.log("gparent Called")
+        })
+        parent.addEventListener("click",()=>{
+            console.log("parent Called")
+        })
+        child.addEventListener("click",()=>{
+            console.log("Child Called")
+        })
+        //by default 3rd param. is false means bubbling
+        //bubbling=>child=>parent=>gparent
+        //capturing=>gparent=>parent=>child
+    </script>
+</body>
+</html>
