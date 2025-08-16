@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 245px;
+            width: 82px;
+            border: 1px solid black;
+        }
+        #red{
+            height: 80px;
+            width: 80px;
+            border-radius: 40px;
+            border: 1px solid black;
+        }
+        #green{
+            height: 80px;
+            width: 80px;
+            border-radius: 40px;
+            border: 1px solid black;
+        }
+        #yellow{
+            height: 80px;
+            width: 80px;
+            border-radius: 40px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="red"></div>
+        <div id="green"></div>
+        <div id="yellow"></div>
+    </div>
+</body>
+ <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(()=>{
+        function showred(){
+            $('#red').css("background-color","red");
+            $('#green').css("background-color","white");
+            $('#yellow').css("background-color","white");
+            setInterval(showgreen,60000)
+        }
+        function showgreen(){
+            $('#red').css("background-color","white");
+            $('#green').css("background-color","green");
+            $('#yellow').css("background-color","white");
+            setInterval(showyellow,60000)
+        }
+        function showyellow(){
+            $('#red').css("background-color","white");
+            $('#green').css("background-color","white");
+            $('#yellow').css("background-color","yellow");
+            setInterval(showred,4000)
+        }
+        showred();
+    })
+</script>
+ <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</html>

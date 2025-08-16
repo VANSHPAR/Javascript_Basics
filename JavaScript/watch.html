@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #screen{
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen">
+        <h1 id="time"></h1>
+        <p id="date"></p>
+    </div>
+
+</body>
+<script>
+    var time=document.getElementById("time")
+    var date=document.getElementById("date")
+    var month=["Jan","Feb","March","April","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+    var day=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+    
+    
+    function update(){
+        var Today=new Date();
+    time.textContent=Today.getHours()+":"+Today.getMinutes();
+    date.textContent=month[Today.getMonth()]+" "+Today.getDate()+" "+day[Today.getDay()];
+   
+    }
+
+    update();
+     setInterval(update,1000)
+    
+    console.log(Today);
+</script>
+</html>
