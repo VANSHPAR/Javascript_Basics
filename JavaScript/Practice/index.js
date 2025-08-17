@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
       box.style.left = x + "px";
       box.style.top = y + "px";
       if(x===0 && y===0) {
-        console.log("hit")
+       
         dx=0;
         dy=0;
-        return 0;
+        
       }
       else{
 
@@ -32,6 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
         // move up
     }
-    let interval = setInterval(animate, 10); // update every 10ms for smooth animation
+    let interval = setInterval(function(){
+      animate() ;
+      if(dx===0 && dy===0) clearInterval(interval) ;
+    }, 10); // update every 10ms for smooth animation
   });
 });
+
