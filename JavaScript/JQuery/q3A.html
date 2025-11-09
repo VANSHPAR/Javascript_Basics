@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="number" placeholder="Enter a number">
+    <button id="btn">Show Factorial</button>
+</body>
+
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    let fact=1;
+    function factorial(n){
+        var i;
+       
+        for(i=1;i<=n;i++){
+            fact*=i;
+        }
+        console.log("fact is "+fact)
+        
+    }
+    $('#input').keypress(function(event){
+        if(event.key==="Enter"){
+            const value=$('input').val()
+
+           factorial(parseInt(value))
+        }
+    })
+    $('#btn').click(function(){
+        alert("Factorial is "+fact)
+        fact=1
+    })
+</script>
+</html>
