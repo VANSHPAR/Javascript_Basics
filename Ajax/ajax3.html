@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+
+    <script>
+        function loaddata(){
+          const xhr = new XMLHttpRequest();
+           
+
+            xhr.open("GET", "http://localhost:8000/request.json", true);
+            
+
+            xhr.onload = () => {
+                console.log(xhr.responseText)
+                document.getElementById('result').innerHTML = xhr.responseText;
+            };
+
+            xhr.send();
+        }
+            
+        
+    </script>
+</head>
+
+<body>
+    <h1>Read Request File</h1>
+
+    <button onclick="loaddata()">Load Data</button>
+
+    <p id="result"></p>
+
+   
+</body>
+</html>

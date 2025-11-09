@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+
+    <script>
+        function Check() {
+            const xhr = new XMLHttpRequest();
+            const number = document.getElementById("num").value;
+
+            xhr.open("POST", "http://localhost:8000/check", true);
+            
+
+            xhr.onload = () => {
+                const res = JSON.parse(xhr.responseText);
+                document.getElementById('result').innerHTML = res.message;
+            };
+
+            xhr.send(JSON.stringify({ number }));
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Palindrome Checker</h1>
+
+    <input id="num" type="number" placeholder="Enter a Number">
+
+    <p id="result"></p>
+
+    <button id="btn" onclick="Check()">Check</button>
+</body>
+</html>

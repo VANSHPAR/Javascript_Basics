@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .table{
+        width: 100%;
+
+      }
+      #head{
+        background-color: rgb(23, 241, 23);
+        color: white;
+      }
+    </style>
+    <script>
+        function loaddata(){
+            const body=document.getElementById("body")
+            body.innerHTML="";
+           const xhr=new XMLHttpRequest()
+        xhr.open("GET","http://localhost:8000/stockprice",true)
+
+        xhr.onload=()=>{
+            if(xhr.status===200){
+              const data=JSON.parse(xhr.responseText)
+            console.log(data)
+            data.forEach(stock=>{
+                const row=`
+                <tr>
+                    <td>${stock.company}</td>
+                    <td>${stock.price}</td>
+                    <td>${stock.change}</td>
+                    </tr>`;
+
+                    body.innerHTML+=row
+            })
+            }
+            
+        } 
+        xhr.send()
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>Stock Exchange</h1>
+    <table border="1" class="table">
+        <thead id="head">
+            <tr>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Change</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+            
+        </tbody>
+    </table>
+    <button onclick="loaddata()">Load Stocks</button>
+</body>
+</html>
